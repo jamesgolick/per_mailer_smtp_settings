@@ -1,7 +1,18 @@
 require 'test_helper'
 
 class PerMailerSmtpSettingsTest < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  context "Sending a normal mailing" do
+    should "deliver through the settings on Base" do
+      Net::SMTP.expects(:new).with("smtp.example.com", 25)
+      NormalMailer.deliver_something
+    end
+  end
+
+  context "Sending from a mailer with overridden settings" do
+    should "deliver with the overridden settings" do
+      Net::SMTP.expects(:new).
+        with("highpriority.example.com", 25)
+      HighPriorityMailer.deliver_something
+    end
   end
 end
