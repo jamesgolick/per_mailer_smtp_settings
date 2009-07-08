@@ -1,0 +1,7 @@
+= per_mailer_smtp_settings
+
+Description goes here.
+
+== Copyright
+
+Copyright (c) 2009 James Golick. See LICENSE for details.
