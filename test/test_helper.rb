@@ -9,7 +9,8 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'per_mailer_smtp_settings'
 
 ActionMailer::Base.smtp_settings = {
-  :address => "smtp.example.com"
+  :address => "smtp.example.com",
+  :port    => 25
 }
 ActionMailer::Base.template_root =
   File.dirname(__FILE__) + "/fixtures"
@@ -20,7 +21,8 @@ end
 
 class HighPriorityMailer < ActionMailer::Base
   self.smtp_settings = {
-    :address => "highpriority.example.com"
+    :address => "highpriority.example.com",
+    :port    => 25
   }
 
   def something; end
