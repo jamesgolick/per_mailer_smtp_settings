@@ -1,6 +1,6 @@
 = per_mailer_smtp_settings
 
-Description goes here.
+Currently, action_mailer's smtp settings are on a per application basis. For various reasons, it may be desirable to send different mailings from different mailers. This plugin enables that functionality.
 
 == Copyright
 
